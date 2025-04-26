@@ -1,9 +1,10 @@
 from google.cloud import bigquery
-from flask import Flask, jsonify
+from flask import Flask, jsonify, abort
 import pandas as pd
 import logging
 import time
 import os
+import requests
 
 from utils.utils import Utils
 
@@ -71,6 +72,7 @@ def run():
         logging.error(
             "Ocurrió un error durante la ejecución de la consulta", exc_info=True
         )
+        return jsonify({"error": "No se encontró el recurso solicitado"}), 404
 
 
 if __name__ == "__main__":

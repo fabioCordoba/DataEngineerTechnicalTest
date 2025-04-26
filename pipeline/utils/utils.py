@@ -3,7 +3,7 @@ import logging
 import time
 from google.cloud import bigquery
 import pandas as pd
-from flask import jsonify
+from flask import jsonify, abort
 
 
 class Utils:
@@ -41,7 +41,7 @@ class Utils:
 
         except Exception as e:
             logging.error("x Ocurrió un error durante la ejecución de la consulta")
-            return None
+            abort(404, description="No se encontró el recurso solicitado")
 
     def trusted_method(self, df_raw):
         try:
