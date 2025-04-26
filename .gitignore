@@ -1,0 +1,11 @@
+# Ignorar un archivo específico
+*.json
+
+# Ignorar todos los archivos .log
+*.log
+
+# Ignorar una carpeta completa
+datos/
+
+# Ignorar todos los archivos .parquet dentro de cualquier carpeta
+**/*.parquet
