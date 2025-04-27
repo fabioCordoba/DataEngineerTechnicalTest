@@ -100,7 +100,8 @@ Puedes probar los endpoints usando Postman, Curl o directamente en el navegador.
 
 - Google Cloud SDK: Si se conectan recursos de GCP
 
-##🔌 Endpoints de Producción (para pruebas desde Postman)
+## 🔌 Endpoints de Producción (para pruebas desde Postman)
+
 Puedes probar los endpoints desplegados en Cloud Run desde herramientas como Postman o cURL. 
 El servicio no requiere autenticación.
 
