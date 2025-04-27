@@ -100,6 +100,23 @@ Puedes probar los endpoints usando Postman, Curl o directamente en el navegador.
 
 - Google Cloud SDK: Si se conectan recursos de GCP
 
+##🔌 Endpoints de Producción (para pruebas desde Postman)
+Puedes probar los endpoints desplegados en Cloud Run desde herramientas como Postman o cURL. 
+El servicio no requiere autenticación.
+
+## 🌐 URL base de la API
+
+- Método: GET
+- URL: https://personal-v2-118241793194.us-central1.run.app
+- Descripción: Extrae los datos crudos desde BigQuery, procesa y retorna en formato JSON un resumen detallado
+
+```bash
+v2:
+  https://personal-v2-118241793194.us-central1.run.app
+Reespaldo:
+  https://personal-v3-118241793194.us-central1.run.app
+```
+
 ## 📋 Notas importantes
 
 - Este proyecto carga datos desde archivos .csv. Asegúrate que la ruta del archivo sea correcta según tu estructura.
