@@ -13,17 +13,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def run():
+
     # Tiempos de ejecución por etapa
     start_time = time.time()
+
     try:
         utl = Utils()
-        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = (
-            "articulate-case-452516-d6-245a4b32d79c.json"
-        )
 
         logging.basicConfig(
             level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
         )
+
+        logging.info("app v3")
 
         # Raw Layer
         extract_start = time.time()
