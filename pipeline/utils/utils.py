@@ -40,7 +40,7 @@ class Utils:
             return df
 
         except Exception as e:
-            logging.error("x Ocurrió un error durante la ejecución de la consulta")
+            logging.error("Ocurrió un error durante la ejecución de la consulta")
             abort(404, description="No se encontró el recurso solicitado")
 
     def trusted_method(self, df_raw):

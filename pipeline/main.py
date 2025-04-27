@@ -18,7 +18,7 @@ def run():
     try:
         utl = Utils()
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = (
-            "articulate-case-452516-d6-dc4fd1dda930.json"
+            "articulate-case-452516-d6-245a4b32d79c.json"
         )
 
         logging.basicConfig(
