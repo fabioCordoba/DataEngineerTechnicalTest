@@ -26,7 +26,6 @@ def run():
         )
 
         # Raw Layer
-
         extract_start = time.time()
         df = utl.extract_data()
         df_raw = df
@@ -60,9 +59,9 @@ def run():
         data_report = utl.report_general(data_quality_impact, tiempos, kpis_por_zona)
 
         data = {
-            "data": f"Consulta ejecutada correctamente. Total registros: {len(df)}",
-            "df": len(df),
-            "df_trus": len(df_trus),
+            "msg": f"Consulta ejecutada correctamente. Total registros: {len(df)}",
+            "dataframe_count": len(df),
+            "processed_data": len(df_refined),
             "data_quality_impact": data_quality_impact,
             "data_report": data_report,
         }

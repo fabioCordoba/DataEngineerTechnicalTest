@@ -7,7 +7,7 @@ En el cual econtraras un cuanderno jupiter con el codgo necesaro para el ejercci
 
 En este caso se opto por crear el pipelne y desplegarlo en el servco de gcloud, y as cualquier persona puee tener aceso a la informacon de este.
 
-decidi tomar el dataset de Google BigQuery: El dataset bigquery-public-data.new_york_taxi_trips 
+decidi tomar el dataset de Google BigQuery: El dataset bigquery-public-data.new_york_taxi_trips
 que contiene datos equivalentes (https://console.cloud.google.com/marketplace/product/city-of-new-york/nyc-tlc-trips?hl=es-419).
 
 ---
@@ -22,7 +22,7 @@ cd tu_repositorio\pipeline
 ```
 
 2. **Crea un entorno virtual:**
-   
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
@@ -34,14 +34,16 @@ venv\Scripts\activate     # Windows
 ```bash
 pip install -r requirements.txt
 ```
+
 Asegúrate de tener Python 3.8+ instalado.
 
 4. **Configura las credenciales de Google Cloud:**
-   
-Coloca tu archivo de credenciales en la raíz o en el directorio correspondiente, y asegúrate que en el código 
-```os.environ["GOOGLE_APPLICATION_CREDENTIALS"]``` apunte a la ruta correcta.
+
+Coloca tu archivo de credenciales en la raíz o en el directorio correspondiente, y asegúrate que en el código
+`os.environ["GOOGLE_APPLICATION_CREDENTIALS"]` apunte a la ruta correcta.
 
 ## 🚀 Ejecución
+
 Para correr la API localmente:
 
 ```bash
@@ -53,9 +55,25 @@ La aplicación quedará disponible en:
 ```bash
 http://127.0.0.1:8000
 ```
+
+Puedes probar los endpoints usando Postman, Curl o directamente en el navegador.
+
+Para correr la API localmente usando Docker:
+
+```bash
+docker run -p 80:8000 fabiocordobadev/personal:taxi-pipelin
+```
+
+La aplicación quedará disponible en:
+
+```bash
+http://127.0.0.1:80
+```
+
 Puedes probar los endpoints usando Postman, Curl o directamente en el navegador.
 
 ## 🏛️ Arquitectura del Proyecto
+
 ```plaintext
 ├── main.py                 # Archivo principal de la aplicación Flask
 ├── utils/
@@ -67,11 +85,12 @@ Puedes probar los endpoints usando Postman, Curl o directamente en el navegador.
 └── README.md               # Este documento
 
 ```
-```app.py:``` Define las rutas de la API y gestiona la lógica principal.
 
-```utils/:``` Contiene funciones auxiliares para limpieza, carga y procesamiento de datos.
+`app.py:` Define las rutas de la API y gestiona la lógica principal.
 
-```requirements.txt:``` Incluye todas las librerías necesarias (Flask, Pandas, Gunicorn, etc).
+`utils/:` Contiene funciones auxiliares para limpieza, carga y procesamiento de datos.
+
+`requirements.txt:` Incluye todas las librerías necesarias (Flask, Pandas, Gunicorn, etc).
 
 ## ⚙️ Dependencias principales
 
@@ -85,4 +104,3 @@ Puedes probar los endpoints usando Postman, Curl o directamente en el navegador.
 
 - Este proyecto carga datos desde archivos .csv. Asegúrate que la ruta del archivo sea correcta según tu estructura.
 - Se recomienda usar Docker para facilitar el despliegue (en futuras versiones).
-
